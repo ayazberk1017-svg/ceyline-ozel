@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Ceylinime Özel 🌸</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(to bottom, #ffd6e8, #fff0f5);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.card {
+  background: rgba(255,255,255,0.9);
+  padding: 40px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+h1 {
+  color: #ff4d88;
+}
+
+p {
+  font-size: 18px;
+}
+
+.flower {
+  position: absolute;
+  top: -50px;
+  font-size: 24px;
+  animation: fall linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>🌸 Ceylinime 🌸</h1>
+  <p>Bu sayfa sadece sana özel 💖</p>
+  <p>İyi ki varsın…</p>
+</div>
+
+<script>
+const flowers = ["🌸","🌷","🌹","💐","🌺"];
+
+for (let i = 0; i < 30; i++) {
+  let f = document.createElement("div");
+  f.className = "flower";
+  f.innerText = flowers[Math.floor(Math.random() * flowers.length)];
+  f.style.left = Math.random() * 100 + "vw";
+  f.style.animationDuration = (5 + Math.random() * 5) + "s";
+  f.style.fontSize = (16 + Math.random() * 24) + "px";
+  document.body.appendChild(f);
+}
+</script>
+
+</body>
+</html>
+
